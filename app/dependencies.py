@@ -7,7 +7,7 @@ from app.core.database import get_db
 from app.crud.user import get_user_by_username
 from app.schemas.token import TokenPayload
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"{settings.API_V1_STR}/auth/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/finance-tracker/auth/login")
 
 async def get_current_user(
     db: Session = Depends(get_db),
